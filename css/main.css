@@ -4680,8 +4680,8 @@ body.search-is-visible {
   font-size: 1.8rem;
   line-height: 3.2rem;
   padding: 1.6rem 140px 1.6rem 32px;
-  background-color: rgba(255, 255, 255, 0.03);
-  color: white;
+  background-color: rgba(255, 255, 255);
+  color: #11111;
   margin-bottom: 2rem;
   border: none;
   border-radius: 5px;
@@ -4694,38 +4694,38 @@ body.search-is-visible {
 
 .intro__subscribe #mc-form input[type="email"]::-webkit-input-placeholder {
   /* WebKit, Blink, Edge */
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(0, 0, 0, 0.3);
 }
 
 .intro__subscribe #mc-form input[type="email"]:-moz-placeholder {
   /* Mozilla Firefox 4 to 18 */
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(0, 0, 0, 0.3);
   opacity: 1;
 }
 
 .intro__subscribe #mc-form input[type="email"]::-moz-placeholder {
   /* Mozilla Firefox 19+ */
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(0, 0, 0, 0.3);
   opacity: 1;
 }
 
 .intro__subscribe #mc-form input[type="email"]:-ms-input-placeholder {
   /* Internet Explorer 10-11 */
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(0, 0, 0, 0.3);
 }
 
 .intro__subscribe #mc-form input[type="email"]::-ms-input-placeholder {
   /* Microsoft Edge */
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(0, 0, 0, 0.3);
 }
 
 .intro__subscribe #mc-form input[type="email"]::placeholder {
   /* Most modern browsers support this now. */
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(0, 0, 0, 0.3);
 }
 
 .intro__subscribe #mc-form input[type="email"].placeholder {
-  color: rgba(255, 255, 255, 0.3) !important;
+  color: rgba(0, 0, 0, 0.3);
 }
 
 .intro__subscribe #mc-form input[type="submit"] {
