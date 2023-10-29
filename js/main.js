@@ -67,13 +67,18 @@
    * ---------------------------------------------------- */
   var clMobileMenu = function () {
     var toggleButton = $(".header-menu-toggle"),
-      nav = $(".header-nav-wrap");
+      nav = $(".header-nav-wrap"),
+      langSelector = $(".s-language-selector");
 
     toggleButton.on("click", function (event) {
+      console.log(event);
       event.preventDefault();
 
       toggleButton.toggleClass("is-clicked");
       nav.slideToggle();
+
+      $(langSelector).removeClass("open");
+      $(langSelector).slideUp();
     });
 
     if (toggleButton.is(":visible")) nav.addClass("mobile");
@@ -349,7 +354,7 @@
       </div>`;
       };
 
-      data.forEach((item) => list.append(toInterestItemStr(item)));
+      list.append(data.map((item) => toInterestItemStr(item)));
     };
 
     const prepareListSlickScroll = () => {
@@ -373,10 +378,48 @@
       });
     };
 
-    $(document).ready(function () {
-      fetch();
-      prepareListSlickScroll();
-    });
+    fetch();
+    prepareListSlickScroll();
+  };
+
+  /**
+   * Language selector
+   */
+  const languageSelectorHandler = function () {
+    const listenToggle = () => {
+      const toogle = $(".language-selector-toggle");
+      const selector = $(".s-language-selector");
+
+      toogle.on("click", function onToggle() {
+        $(selector).slideToggle();
+        $(selector).toggleClass("open");
+      });
+    };
+
+    const renderList = () => {
+      const list = $(".s-language-selector .language-list");
+      const languages = [
+        {
+          label: "English",
+          value: "en",
+          href: "/",
+        },
+        {
+          label: "Việt Nam",
+          value: "vi",
+          href: "/",
+        },
+      ];
+
+      const toLangItemStr = (item) => {
+        return `<li class="language-item"><a href="${item.href}" alt="${item.value}">${item.label}</a></li>`;
+      };
+
+      list.append(languages.map((item) => toLangItemStr(item)));
+    };
+
+    renderList();
+    listenToggle();
   };
 
   /* Initialize
@@ -394,6 +437,10 @@
     clAOS();
     clBackToTop();
     clAjaxChimp();
-    fetchInterestingList();
+
+    $(function () {
+      fetchInterestingList();
+      languageSelectorHandler();
+    });
   })();
 })(jQuery);
